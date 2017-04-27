@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <title>Create products</title>
+
+  <!-- Bootstrap -->
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/chosen.min.css">
+  <link rel="stylesheet" href="dist/summernote.css">
+
+  <link rel="stylesheet" href="css/default.css">
+  <link rel="stylesheet" href="css/new-product.css">
+
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+      <![endif]-->
+    </head>
+
+    <body>
+      <div class="container-fluid display-table">
+        <div class="row display-table-row">
+          <!-- side menu -->
+          <div class="col-md-2 col-sm-1 hidden-xs display-table-cell valign-top" id="side-menu">
+            <h1 class="hidden-sm hidden-xs">Navigation</h1>
+            <ul>
+              <li class="link">
+                <a href="index.html">
+                  <span class="glyphicon glyphicon-th" aria-hidden="true"></span>
+                  <span class="hidden-xs hidden-sm">Dashbroad</span>
+                </a>
+              </li>
+              <li class="link active">
+                <a href="#collapse-products" data-toggle="collapse" aria-controls="collapse-products">
+                  <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
+                  <span class="hidden-xs hidden-sm">Products</span>
+                  <span class="label label-success pull-right hidden-xs hidden-sm">0</span>
+                </a>
+                <ul class="collapse collapseable" id="collapse-products">
+                  <li><a href="new-products.html">Create New</a></li>
+                  <li><a href="products.html">View Products</a></li>
+                </ul>
+              </li>
+              <li class="link">
+                <a href="#collapse-groups" data-toggle="collapse" aria-controls="collapse-groups">
+                  <span class="glyphicon glyphicon glyphicon-folder-open" aria-hidden="true"></span>
+                  <span class="hidden-xs hidden-sm">Groups</span>
+                  <span class="label label-success pull-right hidden-xs hidden-sm">0</span>
+                </a>
+                <ul class="collapse collapseable" id="collapse-groups">
+                  <li><a href="#">Create New</a></li>
+                  <li><a href="#">View Groups</a></li>
+                </ul>
+              </li>
+              <li class="link">
+                <a href="#">
+                  <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+                  <span class="hidden-xs hidden-sm">Users</span>
+                </a>
+              </li>
+              <li class="link settings-btn">
+                <a href="#">
+                  <span class="glyphicon glyphicon-cog" aria-hidden="true"></span><span class="hidden-xs hidden-sm">Settings</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <!-- main ccontent area -->
+          <div class="col-md-10 col-sm-11 display-table-cell valign-top">
+            <div class="row">
+              <header id="nav-header" class="clearfix">
+                <div class="col-md-5">
+                  <nav class="navbar-default pull-left">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="offcanvas" data-target="#side-menu" aria-expanded="false">
+                      <span class="sr-only">Toggle navigation</span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                    </button>
+                  </nav>
+                  <input type="text" class="hidden-sm hidden-xs" id="header-search-field" placeholder="Search for something...">
+                </div>
+                <div class="col-md-7">
+                  <ul class="pull-right">
+                    <li id="welcom" class="hidden-xs">Welcom to your administration area</li>
+                    <li class="fixed-width">
+                      <a href="#">
+                        <span class="glyphicon glyphicon-bell" area-hidden="true"></span>
+                        <span class="label label-warning">3</span>
+                      </a>
+                    </li>
+                    <li class="fixed-width">
+                      <a href="#">
+                        <span class="glyphicon glyphicon-envelope" area-hidden="true"></span>
+                        <span class="label label-message">4</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#" class="logout">
+                        <span class="glyphicon glyphicon-log-out" area-hidden="true"></span> log out
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </header>
+            </div>
+
+            <div class="content">
+              <header>
+                <h2 class="page_title">Create new products</h2>
+              </header>
+              <div class="content-inner">
+                <div class="form-wrapper">
+                  <form>
+                    <div class="form-group">
+                      <label class="sr-only">Title</label>
+                      <input type="text" class="form-control" id="title" placeholder="Title">
+                    </div>
+                    <div class="form-group">
+                      <label class="sr-only">Groups</label>
+                      <select data-placeholder="Select groups" multiple name="tags" class="form-control chosen-select">
+                        <option value=""></option>
+                        <option value="">Test1</option>
+                        <option value="">Test2</option>
+                        <option value="">Test3</option>
+                        <option value="">Test4</option>
+                      </select>
+                    </div>
+                    <div class="form-group">
+                      <label class="sr-only">Description</label>
+                      <textarea class="form-control summernote" placeholder="Description" name="Description"></textarea>
+                    </div>
+                    <div class="clearfix">
+                      <button type="submit" class="btn btn-primary pull-right">Save / Add</button>
+                    </div>  
+                  </form>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <footer id="admin-footer" class="clearfix">
+                <div class="pull-left"><b>Copyright</b> &copy; 2017</div>
+                <div class="pull-right">admin system <b>WEBATOM</b></div>
+              </footer>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+      <!-- Latest compiled and minified JavaScript -->
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+      <script src="dist/summernote.min.js"></script>
+      <script src="js/default.js"></script>
+
+      <script src="js/chosen.jquery.min.js"></script>
+      <script type="text/JavaScript">
+        var config = {
+          '.chosen-select' : {},
+          '.chosen-select-deselect' : {allow_single_deselect: true},
+          '.chosen-select-no-single' : {disable_search_threshold: 10},
+          '.chosen-select-no-result': {no_results_text: 'Oops, nothing found!'},
+          '.chosen-select-width': {width: "95%"}
+        }
+        for (var selector in config) {
+          $(selector).chosen(config[selector]);
+        }
+
+        $('.summernote').summernote({
+            height:200
+        });
+
+      </script>
+    </body>
+
+    </html>
